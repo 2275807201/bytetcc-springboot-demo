@@ -17,7 +17,7 @@ public class AccountServiceCancel implements AccountService {
 	@Override
 	@Transactional
 	public void increaseAmount(String acctId, double amount) {
-		String sql = "update tb_accout_two set frozen = frozen - ? where acct_id = ?";
+		String sql = "update tb_account_two set frozen = frozen - ? where acct_id = ?";
 		jdbcTemplate.update(sql, amount, acctId);
 		log.info("xxxxxxxxxxxxxxxxxxxx---------cancel provider increase amount");
 	}

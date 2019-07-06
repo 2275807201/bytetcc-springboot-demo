@@ -34,7 +34,9 @@ public class ConsumerController {
 
 		this.jdbcTemplate.update("update tb_account_one set amount = amount - ?,frozen = frozen + ? where acct_id = ?", amount, amount,source);
 
-		if(i++ / 2 == 0){
+		boolean condition = (i % 2) == 0;
+		i++;
+		if(condition){
 			throw new RuntimeException("梁欢不允许资金外逃");
 		}
 		return "ok";

@@ -38,10 +38,6 @@
 			<version>0.5.3</version>
 			<exclusions>
 				<exclusion>
-					<groupId>org.mongodb</groupId>
-					<artifactId>mongo-java-driver</artifactId>
-				</exclusion>
-				<exclusion>
 					<groupId>org.springframework.cloud</groupId>
 					<artifactId>spring-cloud-zookeeper-core</artifactId>
 				</exclusion>

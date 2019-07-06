@@ -16,7 +16,7 @@ public class TransferServiceConfirm implements TransferService {
 	@Override
 	@Transactional
 	public void transferAmount(String source, String target, double amount) {
-		String sql = "update tb_account_one set frozen = frozen - ? where source = ?";
+		String sql = "update tb_account_one set frozen = frozen - ? where acct_id = ?";
 		jdbcTemplate.update(sql,amount,source);
 		log.info("xxxxxxxxxxxxxxxxxxxx---------confirm transferServiceConfirm");
 	}
