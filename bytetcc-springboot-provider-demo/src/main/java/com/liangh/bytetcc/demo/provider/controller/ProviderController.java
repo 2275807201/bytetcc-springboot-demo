@@ -8,6 +8,10 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * 如果有时不需要画蛇添足的话，confirmableKey可以不写。例如：
+ * @Compensable(interfaceClass = AccountService.class,cancellableKey = "accountServiceCancel")
+ */
 @Slf4j
 @Compensable(interfaceClass = AccountService.class,confirmableKey = "accountServiceConfirm",cancellableKey = "accountServiceCancel")
 @RestController
